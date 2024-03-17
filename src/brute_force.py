@@ -1,4 +1,4 @@
-from Tucil2_13522156.src.Point import Point
+from Point import Point
 import time
 
 def generate_bezier_bruteforce(start_point, control_point, end_point, iterations, canvas, canvas_width, canvas_height):
