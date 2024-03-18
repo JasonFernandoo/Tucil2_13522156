@@ -54,6 +54,10 @@ def draw_quadratic_bezier(canvas1):
         tk.messagebox.showerror("Error", "Invalid input. Please enter numbers separated by commas.")
         return
 
+    for widget in frame1.winfo_children():
+        if isinstance(widget, tk.Label) and "Quadratic Bezier execution time" in widget.cget("text"):
+            widget.destroy()
+
     canvas_width = canvas1.winfo_width()
     canvas_height = canvas1.winfo_height()
 
@@ -88,6 +92,10 @@ def draw_brute_force(canvas2):
     except ValueError:
         tk.messagebox.showerror("Error", "Invalid input. Please enter numbers separated by commas.")
         return
+
+    for widget in frame2.winfo_children():
+        if isinstance(widget, tk.Label) and "Brute Force execution time" in widget.cget("text"):
+            widget.destroy()
 
     canvas_width = canvas2.winfo_width()
     canvas_height = canvas2.winfo_height()
