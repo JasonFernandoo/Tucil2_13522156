@@ -39,6 +39,7 @@ iterations_entry = tk.Entry(root)
 iterations_entry.pack()
 
 def draw_quadratic_bezier(canvas1):
+    canvas1.delete("all")
     ctrl1_str = ctrl1_entry.get()
     ctrl2_str = ctrl2_entry.get()
     ctrl3_str = ctrl3_entry.get()
@@ -58,12 +59,12 @@ def draw_quadratic_bezier(canvas1):
 
     start_time_quadratic = time.time()
     canvas1.create_line(30, 300, 650, 300, fill="black")
-    for x in range(1, 13):  
-        canvas1.create_line(x * 50, 295, x * 50, 305, fill="black") 
-        canvas1.create_text(x * 50, 315, text=str(x), anchor=tk.N) 
+    for x in range(0, 13):  
+        canvas1.create_line((x * 50) + 30, 50, (x * 50) + 30, 300, fill="grey") 
+        canvas1.create_text((x * 50) + 30, 315, text=str(x), anchor=tk.N) 
     canvas1.create_line(30, 300, 30, 40, fill="black")
     for y in range(20, 240, 20):
-        canvas1.create_line(27, y + 60, 35, y + 60, fill="black")
+        canvas1.create_line(30, y + 60, 650, y + 60, fill="grey")
         canvas1.create_text(25, y + 60, text=str(12 - y // 20), anchor=tk.E)  
     execution_time_quadratic = quadratic_bezier.create_bezier(ctrl1, ctrl2, ctrl3, iterations, canvas1, canvas_width, canvas_height)
     end_time_quadratic = time.time() 
@@ -73,6 +74,7 @@ def draw_quadratic_bezier(canvas1):
 
 
 def draw_brute_force(canvas2):
+    canvas2.delete("all")
     ctrl1_str = ctrl1_entry.get()
     ctrl2_str = ctrl2_entry.get()
     ctrl3_str = ctrl3_entry.get()
@@ -93,11 +95,11 @@ def draw_brute_force(canvas2):
     start_time_brute = time.time()
     canvas2.create_line(30, 300, 650, 300, fill="black")
     for x in range(1, 13):  
-        canvas2.create_line(x * 50, 295, x * 50, 305, fill="black")  
-        canvas2.create_text(x * 50, 315, text=str(x), anchor=tk.N)  
+        canvas2.create_line((x * 50) + 30, 50, (x * 50) + 30, 300, fill="grey")  
+        canvas2.create_text((x * 50) + 30, 315, text=str(x), anchor=tk.N)  
     canvas2.create_line(30, 300, 30, 40, fill="black")
     for y in range(20, 240, 20):
-        canvas2.create_line(27, y + 60, 35, y + 60, fill="black")
+        canvas2.create_line(30, y + 60, 650, y + 60, fill="grey")
         canvas2.create_text(25, y + 60, text=str(12 - y // 20), anchor=tk.E)  
     start_point = brute_force.Point(*ctrl1)
     control_point = brute_force.Point(*ctrl2)
