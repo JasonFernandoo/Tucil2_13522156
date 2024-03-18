@@ -19,6 +19,9 @@ This task aims to implement the formation of Bézier curves using the divide and
 `pip install tkinter`
 `pip install time`
 
+## How To Run
+`python main.py`
+
 
 ## Acknowledgements
 Give credit here.
