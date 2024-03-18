@@ -23,6 +23,9 @@ def generate_bezier_bruteforce(start_point, control_point, end_point, iterations
     scaled_brute_force_points = [((point.x * canvas_width/14.07) + 30, (canvas_height - point.y * canvas_height/20.25) - 105) for point in points if point.x >= 0 and point.y >= 0]
     canvas.create_line(scaled_brute_force_points, smooth=True, fill="red")
     
+    for point in scaled_brute_force_points:
+        canvas.create_oval(point[0]-2, point[1]-2, point[0]+2, point[1]+2, fill="red")
+    
     end_time_brute = time.time() 
     execution_time_brute_force = (end_time_brute - start_time_brute) * 1000
     

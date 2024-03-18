@@ -28,6 +28,9 @@ def create_bezier(ctrl1, ctrl2, ctrl3, iterations, canvas, canvas_width, canvas_
     
     canvas.create_line(scaled_bezier_points, smooth=True, fill="blue")
     
+    for point in scaled_bezier_points:
+        canvas.create_oval(point[0]-2, point[1]-2, point[0]+2, point[1]+2, fill="red")
+    
     for point in scaled_control_points:
         canvas.create_oval(point[0]-2, point[1]-2, point[0]+2, point[1]+2, fill="red")
     
